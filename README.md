@@ -186,7 +186,7 @@ python3 -m http.server 8000
 
 * Others from Server 2 (AZ B)
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%204.12.28%20PM.png)
+![](aws-prod-example-images/21.png)
 
 ---
 
