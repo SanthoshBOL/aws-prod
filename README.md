@@ -41,14 +41,14 @@ This kind of architecture is often used in production-level deployments to ensur
     * 1 Private Subnet
 * Created 1 NAT Gateway in each public subnet (1 for each AZ).
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%202.43.55%20PM.png)
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%202.46.48%20PM.png)
+![](aws-prod-example-images/12.png)
+![](aws-prod-example-images/13.png)
 
 ### 🔸 Launch Template & Auto Scaling Group
 
 * Created a **Launch Template** with a basic Ubuntu AMI and default instance configuration.
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%202.52.47%20PM.png)
+![](aws-prod-example-images/15.png)
 
 * Created an **Auto Scaling Group** using that template:
 
@@ -57,8 +57,8 @@ This kind of architecture is often used in production-level deployments to ensur
   * Launched 1 EC2 in each AZ
   * These EC2s are placed inside **private subnets**, so they don’t have public IPs
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%203.00.34%20PM.png)
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%203.08.51%20PM.png)
+![](aws-prod-example-images/16.png)
+![](aws-prod-example-images/17.png)
 
 ---
 
@@ -69,8 +69,8 @@ Since the private EC2 instances have no public IP, we can’t SSH into them dire
 * Created a new EC2 instance in the **public subnet** of the same VPC
 * Allowed **port 22 (SSH)** in its Security Group
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%203.11.08%20PM.png)
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%203.21.04%20PM.png)
+![](aws-prod-example-images/18.png)
+![](aws-prod-example-images/19.png)
 
 * Used the command below to copy my `.pem` file to the jump host:
 
@@ -80,7 +80,7 @@ scp -i /Users/santhoshkumarchintada/Downloads/aws-login.pem \
 ubuntu@13.61.142.208:/home/ubuntu
 ```
 
-![](aws-prod-example-images/Screenshot%202025-07-15%20at%203.25.01%20PM.png)
+![](aws-prod-example-images/20.png)
 
 * Then SSH’d into the Jump Host:
 
